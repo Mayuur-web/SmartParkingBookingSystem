@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>All Bookings | Smart Parking Admin</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="navbar">
+    <div class="brand">🅿️ Smart Parking · Admin</div>
+    <div class="nav-right">
+      <a href="admin.html" style="color:#fff">Dashboard</a>
+      <a href="admin-bookings.html" style="color:#fff">All Bookings</a>
+      <span class="badge">Administrator</span>
+      <button class="logout" id="logoutBtn">Logout</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="page-title">All Bookings & Revenue Report</div>
+    <div class="page-sub">Every reservation made across all users and locations.</div>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num" id="statTotal">0</div><div class="lbl">Total Slots</div></div>
+      <div class="stat-card"><div class="num" id="statAvailable">0</div><div class="lbl">Available</div></div>
+      <div class="stat-card"><div class="num" id="statBooked">0</div><div class="lbl">Occupied</div></div>
+      <div class="stat-card"><div class="num" id="statRevenue">₹0</div><div class="lbl">Total Revenue</div></div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">All Bookings</div>
+      <table>
+        <thead><tr><th>User</th><th>Slot</th><th>Vehicle No.</th><th>Date / Time</th><th>Duration</th><th>Cost</th><th>Status</th></tr></thead>
+        <tbody id="allBookingsBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>initAdminBookings();</script>
+</body>
+</html>

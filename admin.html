@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Panel | Smart Parking</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="navbar">
+    <div class="brand">🅿️ Smart Parking · Admin</div>
+    <div class="nav-right">
+      <a href="admin.html" style="color:#fff">Dashboard</a>
+      <a href="admin-bookings.html" style="color:#fff">All Bookings</a>
+      <span class="badge">Administrator</span>
+      <button class="logout" id="logoutBtn">Logout</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="page-title">Admin Dashboard</div>
+    <div class="page-sub">Manage parking slots and monitor all bookings.</div>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num" id="statTotal">0</div><div class="lbl">Total Slots</div></div>
+      <div class="stat-card"><div class="num" id="statAvailable">0</div><div class="lbl">Available</div></div>
+      <div class="stat-card"><div class="num" id="statBooked">0</div><div class="lbl">Occupied</div></div>
+      <div class="stat-card"><div class="num" id="statRevenue">₹0</div><div class="lbl">Total Revenue</div></div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">Add New Slot</div>
+      <form id="addSlotForm" style="display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end;">
+        <div class="form-group" style="flex:1;min-width:120px"><label>Slot No.</label><input type="text" id="newSlotNumber" required placeholder="C1" /></div>
+        <div class="form-group" style="flex:2;min-width:180px"><label>Location</label><input type="text" id="newSlotLocation" required placeholder="Block C - Basement" /></div>
+        <div class="form-group" style="flex:1;min-width:110px">
+          <label>Type</label>
+          <select id="newSlotType"><option value="car">Car</option><option value="bike">Bike</option></select>
+        </div>
+        <div class="form-group" style="flex:1;min-width:110px"><label>Price/hr (₹)</label><input type="number" id="newSlotPrice" required min="1" value="30" /></div>
+        <button class="btn small accent" type="submit" style="height:40px">Add Slot</button>
+      </form>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">Manage Slots</div>
+      <table>
+        <thead><tr><th>Slot No.</th><th>Location</th><th>Type</th><th>Rate</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody id="slotTableBody"></tbody>
+      </table>
+    </div>
+
+    <div class="section-card" style="text-align:center">
+      <a href="admin-bookings.html" class="btn small" style="width:auto; display:inline-block; text-decoration:none;">View All Bookings & Revenue Report →</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>initAdmin();</script>
+</body>
+</html>

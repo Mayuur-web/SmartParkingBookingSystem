@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard | Smart Parking</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="navbar">
+    <div class="brand">🅿️ Smart Parking</div>
+    <div class="nav-right">
+      <a href="dashboard.html" style="color:#fff">Dashboard</a>
+      <a href="my-bookings.html" style="color:#fff">My Bookings</a>
+      <a href="profile.html" style="color:#fff">Profile</a>
+      <span>Welcome, <strong id="welcomeName"></strong></span>
+      <button class="logout" id="logoutBtn">Logout</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="page-title">Available Parking Slots</div>
+    <div class="page-sub">Search, filter and reserve a slot in real time.</div>
+
+    <div class="filter-bar">
+      <div class="form-group">
+        <label>Vehicle Type</label>
+        <select id="filterType">
+          <option value="all">All Types</option>
+          <option value="car">Car</option>
+          <option value="bike">Bike</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Location</label>
+        <select id="filterLocation">
+          <option value="all">All Locations</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="slot-grid" id="slotGrid"></div>
+
+    <div class="section-card" style="margin-top:30px; text-align:center">
+      <a href="my-bookings.html" class="btn small" style="width:auto; display:inline-block; text-decoration:none;">View My Bookings →</a>
+    </div>
+  </div>
+
+  <!-- Booking Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <h3>Confirm Booking</h3>
+      <p id="modalSlotInfo" style="color:var(--muted); font-size:13px; margin-bottom:14px;"></p>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label>Vehicle Number</label>
+          <input type="text" id="vehicleNumber" required placeholder="MH12AB1234" />
+        </div>
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" id="bookDate" required />
+        </div>
+        <div class="form-group">
+          <label>Start Time</label>
+          <input type="time" id="startTime" required value="09:00" />
+        </div>
+        <div class="form-group">
+          <label>Duration (hours)</label>
+          <select id="duration">
+            <option value="1">1 hour</option>
+            <option value="2">2 hours</option>
+            <option value="4">4 hours</option>
+            <option value="8">8 hours</option>
+            <option value="24">24 hours</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn secondary" id="closeModal">Cancel</button>
+          <button type="submit" class="btn accent">Confirm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>initDashboard();</script>
+</body>
+</html>

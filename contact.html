@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us | Smart Parking</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="pnav">
+    <div class="brand">🅿️ Smart Parking</div>
+    <div class="links">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="index.html" class="cta">Login / Sign Up</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="page-title">Contact Us</div>
+    <div class="page-sub">Have a question or feedback? We'd love to hear from you.</div>
+
+    <div class="two-col">
+      <div class="section-card">
+        <div class="section-title">Send a Message</div>
+        <div class="success-msg" id="successMsg" style="display:none">Thank you! Your message has been recorded.</div>
+        <form id="contactForm">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="cName" required placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="cEmail" required placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="cMessage" rows="4" required placeholder="How can we help?" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:6px;font-family:inherit;font-size:14px;"></textarea>
+          </div>
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title">Contact Information</div>
+        <ul class="info-list">
+          <li><strong>Address</strong>Department of Computer Science &amp; Engineering, [College Name], [City]</li>
+          <li><strong>Email</strong>support@smartparking-demo.com</li>
+          <li><strong>Phone</strong>+91 98765 43210</li>
+          <li><strong>Support Hours</strong>Monday – Saturday, 9:00 AM – 6:00 PM</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer">
+    🅿️ Smart Parking Booking System · A Web Technology Mini Project · <a href="home.html">Home</a> · <a href="about.html">About</a>
+  </div>
+
+  <script>
+    document.getElementById("contactForm").onsubmit = function (e) {
+      e.preventDefault();
+      document.getElementById("successMsg").style.display = "block";
+      e.target.reset();
+    };
+  </script>
+</body>
+</html>

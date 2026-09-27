@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FAQ | Smart Parking</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="pnav">
+    <div class="brand">🅿️ Smart Parking</div>
+    <div class="links">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="faq.html" class="active">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html" class="cta">Login / Sign Up</a>
+    </div>
+  </div>
+
+  <div class="container" style="max-width:800px">
+    <div class="page-title">Frequently Asked Questions</div>
+    <div class="page-sub">Everything you need to know about booking a parking slot.</div>
+
+    <div id="accordion">
+      <div class="accordion-item">
+        <div class="accordion-q">How do I book a parking slot? <span>+</span></div>
+        <div class="accordion-a">Sign up or log in, go to your Dashboard, filter slots by vehicle type or location, and click "Book Now" on any available slot. Fill in your vehicle number, date, start time and duration to confirm.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-q">Can I cancel a booking? <span>+</span></div>
+        <div class="accordion-a">Yes. Go to "My Bookings," find the active booking you want to cancel, and click "Cancel." The slot will immediately become available again for others.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-q">How is the parking cost calculated? <span>+</span></div>
+        <div class="accordion-a">Cost is calculated automatically as the selected duration (in hours) multiplied by the slot's hourly rate, shown to you before you confirm the booking.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-q">Is there a mobile app? <span>+</span></div>
+        <div class="accordion-a">Not yet — the current version is a responsive website that works on both desktop and mobile browsers. A dedicated mobile app is on our roadmap.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-q">How do I become an administrator? <span>+</span></div>
+        <div class="accordion-a">Administrator accounts are created by the facility owner. For this demo, use the admin login admin@parking.com / admin123 to explore the admin dashboard.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-q">What payment methods are supported? <span>+</span></div>
+        <div class="accordion-a">This demo does not process real payments — cost is calculated and displayed for demonstration purposes. Payment gateway integration is listed under Future Scope.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer">
+    🅿️ Smart Parking Booking System · A Web Technology Mini Project · <a href="home.html">Home</a> · <a href="contact.html">Contact</a>
+  </div>
+
+  <script>
+    document.querySelectorAll(".accordion-q").forEach(q => {
+      q.onclick = () => q.parentElement.classList.toggle("open");
+    });
+  </script>
+</body>
+</html>
